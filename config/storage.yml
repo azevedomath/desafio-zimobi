@@ -1,9 +1,9 @@
 amazon:
   service: S3
-  access_key_id: <%= Rails.application.credentials.access_key_id%>
-  secret_access_key: <%= Rails.application.credentials.secret_access_key%>
-  region: <%= Rails.application.credentials.region%>
-  bucket: <%= Rails.application.credentials.bucket_name%>
+  access_key_id: ENV['ACCES_KEY_ID']
+  secret_access_key: ENV['SECRET_KEY_ID']
+  region: sa-east-1
+  bucket: ENV['BUCKET']
 
 local:
   root: <%= Rails.root.join("storage") %>
