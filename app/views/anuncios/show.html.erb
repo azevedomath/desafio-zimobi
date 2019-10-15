@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @anuncio.title %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @anuncio.description %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  
+  <img src="<%= url_for(@anuncio.image) %>" alt="Product_id<%=@anuncio.id%>">
+</p>
+
+<p>
+  <strong>Preço:</strong>
+  <%= @anuncio.price %>
+</p>
+
+<%= link_to 'Editar', edit_anuncio_path(@anuncio) %> | <%= link_to 'Voltar',
+anuncios_path %>

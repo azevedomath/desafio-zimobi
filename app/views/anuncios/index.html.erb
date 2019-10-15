@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Anuncios</h1>
+<% if @anuncios.count > 0 %>
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anuncios.each do |anuncio| %>
+      <tr>
+        <td><%= anuncio.title %></td>
+        <td><%= anuncio.description %></td>
+        <td><%= anuncio.price %></td>
+        <td><%= link_to 'Ver Anúncio Completo', anuncio %></td>
+        <td><%= link_to 'Editar', edit_anuncio_path(anuncio) %></td>
+        <td><%= link_to 'Deletar', anuncio, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Novo Anúncio', new_anuncio_path %>
+<% else %>
+
+<h2>Nenhum anúncio ainda...</h2>
+<p> Crie um agora mesmo: </p> 
+<%= link_to 'Criar Anúncio', new_anuncio_path %>
+
+<% end %>
+
+
+

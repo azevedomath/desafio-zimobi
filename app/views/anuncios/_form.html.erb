@@ -1,0 +1,36 @@
+<%= form_with(model: anuncio, local: true) do |form| %> <% if
+anuncio.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(anuncio.errors.count, "error") %> prohibited this anuncio from
+    being saved:
+  </h2>
+
+  <ul>
+    <% anuncio.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= form.label :Título %> <%= form.text_field :title %>
+</div>
+
+<div class="field">
+  <%= form.label :Descrição %> <%= form.text_field :description %>
+</div>
+
+<div class="field">
+  <%= form.label :Imagem %> <%= form.file_field :image %>
+</div>
+
+<div class="field">
+  <%= form.label :Preço %> <%= form.text_field :price %>
+</div>
+
+<div class="actions">
+  <%= form.submit 'Enviar'%>
+</div>
+<% end %>
