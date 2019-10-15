@@ -3,7 +3,7 @@ amazon:
   access_key_id: ENV['ACCES_KEY_ID']
   secret_access_key: ENV['SECRET_KEY_ID']
   region: sa-east-1
-  bucket: ENV['BUCKET']
+  bucket: ENV['BUCKET_NAME']
 
 local:
   root: <%= Rails.root.join("storage") %>
