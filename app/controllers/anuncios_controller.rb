@@ -1,4 +1,5 @@
 class AnunciosController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_anuncio, only: [:show, :edit, :update, :destroy]
 
   

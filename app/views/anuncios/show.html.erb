@@ -1,25 +1,71 @@
-<p id="notice"><%= notice %></p>
+<style>
+  .img-resp{
+    height: 85%;
+    width: 85%;
+    object-fit: cover;
+  }
+</style>
+<br>
+<div class="container  h2">
+<p id="notice" style="color: green !important;"><%= notice %></p>
 
-<p>
-  <strong>Título:</strong>
-  <%= @anuncio.title %>
-</p>
-
-<p>
-  <strong>Descrição:</strong>
-  <%= @anuncio.description %>
-</p>
-
-<p>
-  <strong>Imagem:</strong>
+<div class="row">
+    
+      <div class="col-lg-2 col-md-4 col-sm-12">
+        Título:
+      </div>
+      <div class="col-lg-10 col-md-8 col-sm-12 h3">
+          <span class="align-dle"><%= @anuncio.title %></span>
+      </div>
   
-  <img src="<%= url_for(@anuncio.image) %>" alt="Product_id<%=@anuncio.id%>">
-</p>
+</div>
+<hr>
+<div class="row">
+    
+    <div class="col-lg-2 col-md-4 col-sm-12">
+      Descrição:
+    </div>
+    <div class="col-lg-10 col-md-8 col-sm-12 h3">
+        <span class="align-dle"><%= @anuncio.description %></span>
+    </div>
 
-<p>
-  <strong>Preço:</strong>
-  <%= @anuncio.price %>
-</p>
+</div>
+<hr>
+<div class="row">
+    
+    <div class="col-lg-2 col-md-4 col-sm-12">
+      Imagem:
+    </div>
+    <div class="col-lg-10 col-md-8 col-sm-12 h3">
+      <img class="img-resp" src="<%= url_for(@anuncio.image) %>" >
+    </div>
 
-<%= link_to 'Editar', edit_anuncio_path(@anuncio) %> | <%= link_to 'Voltar',
-anuncios_path %>
+</div>
+<hr>
+<div class="row">
+    
+    <div class="col-lg-2 col-md-4 col-sm-12">
+      Preço:
+    </div>
+    <div class="col-lg-10 col-md-8 col-sm-12">
+        <span class="align-dle"><%= @anuncio.price %></span>
+    </div>
+
+</div>
+
+   
+<br>    
+
+<div class="row">
+    <div class="col-md-6 sm-12">
+      <%= link_to 'Editar', edit_anuncio_path(@anuncio), class: "btn btn-lg btn-primary" %>
+      <%= link_to 'Voltar',
+      anuncios_path , class: "btn btn-lg btn-danger" %>
+    </div>
+    
+</div>
+<br><br><br>
+
+ 
+
+</div>

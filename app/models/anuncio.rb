@@ -1,4 +1,5 @@
 class Anuncio < ApplicationRecord
-    has_one_attached :image
-    # delegate :filename, to: :image, allow_nil: true
+    has_one_attached :image 
+    validates :image, presence: true
+    validates_presence_of :image
 end
