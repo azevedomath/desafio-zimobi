@@ -21,11 +21,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.submit "Logar", class:"btn btn-success" %>
+    <%= f.submit "Enviar", class:"btn-lg btn-block btn-success" %>
   </div>
 <% end %>
 <br>
 <br>
-Se você não possui uma conta: <br>
-<%= render "devise/shared/links" %>
+Se você ainda não possui uma conta: <br>
+<%= link_to "Cadastre-se", new_user_registration_path, class:"btn-lg btn-info" %>
 </div>

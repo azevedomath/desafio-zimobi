@@ -37,7 +37,11 @@
       Imagem:
     </div>
     <div class="col-lg-10 col-md-8 col-sm-12 h3">
+      <%if @anuncio.image.attached?%>
       <img class="img-resp" src="<%= url_for(@anuncio.image) %>" >
+      <%else%>
+      Sem Imagem
+      <%end%>
     </div>
 
 </div>

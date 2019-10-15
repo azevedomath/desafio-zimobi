@@ -4,7 +4,7 @@ class AnunciosController < ApplicationController
 
   
   def index
-    @anuncios = Anuncio.all
+    @anuncios = Anuncio.all.order('created_at')
   end
 
 

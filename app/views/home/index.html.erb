@@ -1,0 +1,42 @@
+
+<div class="container text-center"> 
+        <br>
+        <br>
+<% if user_signed_in?%>
+<div class="row h1 ">
+    <div class="col-md-12"> 
+        Bem Vindo, <%= current_user.email.split('@').first%>!
+    </div>
+</div>
+<hr>
+<br>
+<div class="row h1 ">
+    <div class="col-md-12"> 
+        <%= link_to "Comece a Anúnciar!", anuncios_path, class:"btn-lg btn-success" %>
+    </div>
+</div>
+
+<%else%>
+        
+    <div class="row h1 ">
+        <div class="col-md-12"> 
+            Bem Vindo!
+        </div>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 h3"> 
+            Para acessar o sistema de anúncios, por favor, logue-se: <br><br>
+            <%= link_to "Logue-se", user_session_path, class:"btn-lg btn-success" %>
+            <br><br>
+        </div>
+       
+        <div class="col-md-6 col-sm-12 h3"> 
+            Caso não possua uma conta, basta se cadastrar: <br><br>
+            <%= link_to "Cadastre-se", new_user_registration_path, class:"btn-lg btn-primary" %>
+        </div>
+    </div>
+</div>
+<%end%>
