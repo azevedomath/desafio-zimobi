@@ -1,9 +1,9 @@
 amazon:
   service: S3
-  access_key_id: AKIAIGAGQQY5MJCSPQZA
-  secret_access_key: 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
-  region: sa-east-1
-  bucket: desafio-zimobi-2019
+  access_key_id: <%= Rails.application.credentials.access_key_id%>
+  secret_access_key: <%= Rails.application.credentials.secret_access_key%>
+  region: <%= Rails.application.credentials.region%>
+  bucket: <%= Rails.application.credentials.bucket_name%>
 
 local:
   root: <%= Rails.root.join("storage") %>
