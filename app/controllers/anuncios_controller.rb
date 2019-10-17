@@ -4,7 +4,7 @@ class AnunciosController < ApplicationController
 
   
   def index
-    @anuncios = Anuncio.all.order('created_at')
+    @anuncios = current_user.anuncio.all.order('created_at')
   end
 
 
@@ -22,7 +22,7 @@ class AnunciosController < ApplicationController
 
   
   def create
-    @anuncio = Anuncio.new(anuncio_params)
+    @anuncio = current_user.anuncio.new(anuncio_params)
 
     respond_to do |format|
       if @anuncio.save
