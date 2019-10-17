@@ -1,5 +1,5 @@
 class AnuncioMailer < ApplicationMailer
-default from: 'zimobichallenge@gmail.com'
+default from: 'notify.zimobi@gmail.com'
    
     def anuncio_request
       @user = params[:user]
