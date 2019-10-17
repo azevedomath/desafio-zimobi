@@ -74,9 +74,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'notify.zimobi.herokuapp.com',
+    domain:               'zimobichallenge.herokuapp.com',
     user_name:            'notify.zimobi@gmail.com',
-    password:             ENV['GMAIL_PASSWORD'],
+    password:             'matheus@123',
     authentication:       'plain',
     enable_starttls_auto: true }
   # Ignore bad email addresses and do not raise email delivery errors.
