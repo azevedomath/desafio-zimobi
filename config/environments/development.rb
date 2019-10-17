@@ -50,7 +50,7 @@ Rails.application.configure do
   port:                 587,
   domain:               'gmail.com',
   user_name:            'notify.zimobi@gmail.com',
-  password:             'matheus@123',
+  password:             ENV['GMAIL_PASSWORD'],
   authentication:       'plain'}
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

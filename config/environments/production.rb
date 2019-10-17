@@ -76,7 +76,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'zimobichallenge.herokuapp.com',
     user_name:            'notify.zimobi@gmail.com',
-    password:             'matheus@123',
+    password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true }
   # Ignore bad email addresses and do not raise email delivery errors.
