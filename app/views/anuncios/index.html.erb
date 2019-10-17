@@ -44,7 +44,7 @@
           <%= link_to 'Editar', edit_anuncio_path(anuncio), class:"btn btn-primary"  %>
           <br>
       
-          <%= link_to 'Deletar', anuncio, method: :delete, data: { confirm: 'Tem certeza?',class: "alert alert-danger" }, class:"btn btn-danger"  %>
+          <%= link_to 'Deletar', anuncio, method: :delete, data: { confirm: 'Tem certeza?'}, class:"btn btn-danger"  %>
         </div>
       </div>
    
@@ -53,6 +53,7 @@
   <% end %>
   <br>
   <%= link_to 'Novo Anúncio', new_anuncio_path, class: "btn-lg btn-success" %>
+  <%= link_to 'Pesquisar Anúncios', browse_path, class: "btn-lg btn-info"%>
   <br>
   <br>
   <% else %>
@@ -61,9 +62,12 @@
   <h4> Crie um agora mesmo: </h4> 
   <br>
   <%= link_to 'Criar Anúncio', new_anuncio_path, class: "btn-lg btn-success" %>
-  <% end %>
   
+  <% end %>
+ 
 </div>
+
  <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "btn btn-danger", style:"margin-left: 30px;"%>
+ 
 <br>
 <br>

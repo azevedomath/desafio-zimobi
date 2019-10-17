@@ -1,0 +1,65 @@
+<style>  
+    .img-card {
+        width: 100%;
+        height: 100%;
+         
+       
+    }
+    .img-card  img {
+        width: 100%; /* or any custom size */
+        height: 100%; 
+        object-fit: contain;
+    }
+    .inline{
+        display: inline-block;
+    }
+    .bkall{
+        word-break: break-all;
+    }
+</style>
+<br>
+<br>
+
+<div class="container">
+    
+    <% @anuncios.each do |an| %>
+        <%if an.user_id != current_user.id %>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="img-card">
+                        <%if an.image.attached?%>
+                            <img src="<%=url_for(an.image)%>" alt="...">
+                        <%else%>
+                            <img src="https://desafiozimobi.s3-sa-east-1.amazonaws.com/no_img.jpeg" alt="..." >
+                        <%end%>  
+                    </div>
+                </div>
+           
+            
+           
+                <div class="col-lg-7 align-self-start bkall">
+                    <h3><b>Título:</b> <%=an.title%></h3>
+                    <p><b>Descrição:</b> <%=an.description%></p>
+                    <p><b>Preço:</b> R$<%=an.price%></p>
+                    <label>
+                        <small>
+                            Autor: <%=get_username(an)%>
+                        <br>
+                               Há 2 dias
+                        </small>
+                    </label>
+                    <br>
+                    <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                        <%= link_to 'Ver Anúncio Completo', anuncio_path(an),class:"btn btn-lg btn-info"  %>
+                        <br>
+                        <%= link_to 'Tenho Interesse!', send_email_path(an),class:"btn btn-lg btn-success", data: { confirm: 'Deseja enviar um e-mail ao anunciante?'} %>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+           
+        <% end %>
+    <%end%>
+
+</div>

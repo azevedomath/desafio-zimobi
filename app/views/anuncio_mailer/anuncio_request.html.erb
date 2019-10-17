@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Olá, <%= @user.email.split('@').first %>!</h1>
+    <p>
+      O seu anúncio acaba de ser marcado como "Tenho Interesse" por um de nossos clientes.
+    </p>
+    <br>
+    <h3>
+      Sobre o anúncio:
+    </h3>
+    <p>
+        Título: @anuncio.title
+    </p>
+    <p>
+        Descrição: @anuncio.description
+    </p>
+    <p>
+        Preço: @anuncio.price
+    </p>
+    <br><br>
+    <p>E-mail do cliente: @email</p>
+  </body>
+</html>

@@ -38,9 +38,9 @@
     </div>
     <div class="col-lg-10 col-md-8 col-sm-12 h3">
       <%if @anuncio.image.attached?%>
-      <img class="img-resp" src="<%= url_for(@anuncio.image) %>" >
+        <img class="img-resp" src="<%= url_for(@anuncio.image) %>" >
       <%else%>
-      Sem Imagem
+        <img src="https://desafiozimobi.s3-sa-east-1.amazonaws.com/no_img.jpeg" alt="..." class="img-thumbnail">
       <%end%>
     </div>
 
@@ -62,13 +62,14 @@
 
 <div class="row">
     <div class="col-md-6 sm-12">
-      <%= link_to 'Editar', edit_anuncio_path(@anuncio), class: "btn btn-lg btn-primary" %>
-      <%= link_to 'Voltar',
-      anuncios_path , class: "btn btn-lg btn-danger" %>
+      <%if owner(@anuncio)%>
+        <%= link_to 'Editar', edit_anuncio_path(@anuncio), class: "btn btn-lg btn-primary" %>
+      <%end%>
+      <%= link_to 'Voltar',:back, class: "btn btn-lg btn-danger" %>
     </div>
     
 </div>
-<br><br><br>
+<br><br>
 
  
 

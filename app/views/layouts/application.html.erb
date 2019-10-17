@@ -10,6 +10,11 @@
   </head>
 
   <body>
+      <% if controller_name == "anuncios" %>
+      <br>
+      <%= link_to 'Home', anuncios_path,class:"btn btn-primary",style:"margin-left: 30px;" %>
+      <%end%>
+      <br>
     <%= yield %>
   </body>
 </html>

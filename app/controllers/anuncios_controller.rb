@@ -1,7 +1,15 @@
 class AnunciosController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_anuncio, only: [:show, :edit, :update, :destroy]
+  before_action :get_anuncio, only: [:show, :edit, :update, :destroy, :send_email]
 
+  
+  def browse
+    @anuncios = Anuncio.all
+  end
+
+  def send_email
+    AnuncioMailer.with(user: @anuncio.user, anuncio: @anuncio, user_email: current_user.email).anuncio_request.deliver_now
+  end
   
   def index
     @anuncios = current_user.anuncio.all.order('created_at')
@@ -57,8 +65,18 @@ class AnunciosController < ApplicationController
     end
   end
 
-  private
-    
+  def get_username(an)
+    an.user.email.split('@').first
+  end
+  helper_method :get_username
+
+  def owner(an)
+    an.user.id == current_user.id
+  end
+  helper_method :owner
+
+  private  
+
     def get_anuncio
       @anuncio = Anuncio.find(params[:id])
     end

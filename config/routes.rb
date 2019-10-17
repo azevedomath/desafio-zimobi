@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
+
+
+  
+  get '/browsing' =>'anuncios#browse', :as => :browse
+  get '/emailing/:id' =>'anuncios#send_email', :as => :send_email
   devise_for :users
   resources :anuncios
   root 'home#index'
