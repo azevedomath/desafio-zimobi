@@ -45,7 +45,14 @@
                         <small>
                             Autor: <%=get_username(an)%>
                         <br>
-                               Há 2 dias
+                            <% days = ((Time.now - an.created_at)/1.day).to_i %>
+                            <% if  days < 1%>
+                                Hoje
+                            <% elsif days == 1%>
+                                Há 1 dia
+                            <% else %>
+                                Há <%=days%> dias
+                            <% end %>
                         </small>
                     </label>
                     <br>

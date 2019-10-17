@@ -8,7 +8,8 @@ class AnunciosController < ApplicationController
   end
 
   def send_email
-    AnuncioMailer.with(user: @anuncio.user, anuncio: @anuncio, user_email: current_user.email).anuncio_request.deliver_now
+    AnuncioMailer.with(user: current_user, anuncio: @anuncio).myself_request.deliver_now
+    AnuncioMailer.with(user: @anuncio.user, anuncio: @anuncio, user_email: current_user.email).anuncio_request.deliver_later
   end
   
   def index

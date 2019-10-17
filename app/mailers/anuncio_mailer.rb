@@ -5,6 +5,12 @@ default from: 'notify.zimobi@gmail.com'
       @user = params[:user]
       @anuncio = params[:anuncio]
       @email = params[:user_email]
-      mail(to: @user.email, subject: 'Alguém tem interesse no seu anúncio!!')
+      mail(to: @user.email, subject: 'Comprar Anúncio')
+    end
+
+    def myself_request
+      @user = params[:user]
+      @anuncio = params[:anuncio]
+      mail(to: @user.email, subject: 'Compra Iniciada')
     end
 end

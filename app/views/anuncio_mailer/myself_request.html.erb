@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Olá, <%= @user.email.split('@').first %>!</h1>
+    <p>
+      Você acabou de iniciar um processo de compra dentro do nosso site. 
+    </p>
+    <br>
+    <h3>
+      Sobre o anúncio:
+    </h3>
+    <p>
+        Título: <%= @anuncio.title %>
+    </p>
+    <p>
+        Descrição: <%= @anuncio.description %>
+    </p>
+    <p>
+        Preço: <%= @anuncio.price %>
+    </p>
+    <br><br>
+    <p>Se você não fez essa requisição, por favor ignore este e-mail.</p>
+  </body>
+</html>
