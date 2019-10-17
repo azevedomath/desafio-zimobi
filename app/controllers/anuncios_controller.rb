@@ -13,7 +13,7 @@ class AnunciosController < ApplicationController
 
  
   def new
-    @anuncio = Anuncio.new
+    @anuncio = current_user.anuncio.new
   end
 
   
