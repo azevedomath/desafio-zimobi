@@ -65,7 +65,7 @@
       <%if owner(@anuncio)%>
         <%= link_to 'Editar', edit_anuncio_path(@anuncio), class: "btn btn-lg btn-primary" %>
       <%else%>
-        <%= link_to 'Tenho Interesse!', send_email_path(an),class:"btn btn-lg btn-success", data: { confirm: 'Deseja enviar um e-mail ao anunciante?'} %>
+        <%= link_to 'Iniciar Compra!', send_email_path(@anuncio),class:"btn btn-lg btn-success", data: { confirm: 'Deseja enviar um e-mail ao anunciante?'} %>
       <%end%>
       <%= link_to 'Voltar',:back, class: "btn btn-lg btn-danger" %>
     </div>
